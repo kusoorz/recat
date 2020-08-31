@@ -1,0 +1,12 @@
+.i-loading {
+    .loading {
+        background:rgba(0, 0, 0, 0.05) url('./loading.gif') center no-repeat;
+        background-size: 50%;
+        border-radius: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 6rem;
+    }
+}
