@@ -1,0 +1,29 @@
+.table {
+    font-family: monospace;
+    text-align: left;
+    border: 1px solid #F2F2F2;
+    border-spacing: 0;
+    width: 100vmin;
+    thead {
+        tr {
+            background: #FAFAFA;
+            td {
+                border-bottom: 1px solid #F2F2F2;
+                padding: 1em 1.5em;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 1em 1.5em;
+            }
+            &:nth-child(n+2) td {
+                border-top: 1px solid rgba(200, 200, 0, 0.1);
+            }
+            &:nth-child(2n) {
+                background: rgba(255, 255, 0, 0.05);
+            }
+        }
+    }
+}

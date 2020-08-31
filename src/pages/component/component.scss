@@ -1,0 +1,43 @@
+.component-view {
+    text-align: left;
+    padding: 0 1.25rem;
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1.5rem 2rem;
+    }
+    .label {
+        color: #0078C8;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0, 120, 200, 0.2);
+        display: inline-block;
+        margin: 0.5rem 0;
+        padding-bottom: 0.5rem;
+        + div {
+            margin-bottom: 2.5rem;
+        }
+    }
+    .code {
+        color: #484848;
+    }
+    .test {
+        color: #484848;
+        button {
+            background: #FFF;
+            border: 1px solid #EEE;
+            border-radius: 0.5em;
+            padding: 0.5rem 1rem;
+            &:hover,
+            &:active {
+                color: #0078C8;
+                cursor: pointer;
+            }
+        }
+    }
+    .list {
+        padding: 1rem 0;
+        table {
+            width: 100%;
+        }
+    }
+}
