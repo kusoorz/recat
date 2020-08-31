@@ -1,0 +1,33 @@
+.i-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0.5em 0;
+    label {
+        font-size: 1em;
+        line-height: 1.5em;
+        flex-shrink: 0;
+        padding: 0 0.5em;
+    }
+    input {
+        background: none;
+        border-width: 0;
+        border-bottom: 1px solid #F2F2F2;
+        line-height: 1.5em;
+        outline: none;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0 0.25em;
+    }
+    .clear {
+        position: absolute;
+        right: 0;
+        width: 1em;
+        &:before {
+            font-size: 1.2em;
+            line-height: 1em;
+            display: block;
+            content: '×';
+        }
+    }
+}
