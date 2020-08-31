@@ -1,6 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { showLoading } from 'store'
 
 class Index extends React.Component {
+    componentDidMount () {
+        const { dispatch } = this.props
+        dispatch(showLoading(true))
+    }
     render () {
         return (
             <div className="index-view"></div>
@@ -8,4 +14,4 @@ class Index extends React.Component {
     }
 }
 
-export default Index
+export default connect()(Index)
