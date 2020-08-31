@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import promise from 'redux-promise'
 import { toast } from './toast/reducers'
 import { dialog } from './dialog/reducers'
 import { loading } from './loading/reducers'
@@ -11,7 +12,8 @@ const store = createStore(
         toast,
         dialog,
         loading
-    })
+    }),
+    applyMiddleware(promise)
 )
 
 export { showToast, showDialog, showLoading }
