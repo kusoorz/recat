@@ -14,7 +14,6 @@ class Toast extends React.Component {
         const { show } = this.props
         if (show !== prevProps.show) {
             show ? (
-                setTimeout(() => this.onHide(), 2000) &&
                 this.onShow()
             ) : (
                 this.onHide()

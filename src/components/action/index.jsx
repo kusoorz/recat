@@ -11,7 +11,7 @@ class Action extends React.Component {
                 <Toast
                     show={toast.show}
                     text={toast.text}
-                    onHide={() => dispatch(showToast({ show: false }))}>
+                    onShow={() => setTimeout(() => dispatch(showToast({ show: false })), 2000)}>
                 </Toast>
                 <Dialog
                     show={dialog.show}
