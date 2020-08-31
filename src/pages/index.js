@@ -1,5 +1,9 @@
-import Index from './index/index'
+import { lazy } from 'react'
 
-export {
-    Index
-}
+const routes = [{
+    name: 'index',
+    path: '/',
+    component: lazy(() => import('./index/index'))
+}]
+
+export default routes
