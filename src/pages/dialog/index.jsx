@@ -55,6 +55,12 @@ class dialog extends React.Component {
             show: false
         }
     }
+    componentDidMount () {
+        this._Ready = true
+    }
+    componentWillUnmount () {
+        this._Ready = false
+    }
     onShow = () => this.setState({ show: !!1 })
     onHide = () => this.setState({ show: !!0 })
     render () {
