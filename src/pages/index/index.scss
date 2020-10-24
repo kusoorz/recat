@@ -31,10 +31,11 @@
         }
         li {
             box-sizing: border-box;
-            flex-basis: 50vmin;
+            flex-basis: 25%;
             flex-grow: 1;
             margin-bottom: 0.5rem;
             padding: 1rem;
+            min-width: 240px;
             .title {
                 font-size: 1.2rem;
                 border-bottom: 1px solid #F2F2F2;

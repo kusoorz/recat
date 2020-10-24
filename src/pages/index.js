@@ -8,6 +8,11 @@ const routes = [{
     exact,
     component: lazy(() => import('./index/index'))
 }, {
+    name: 'image',
+    path: '/image',
+    exact,
+    component: lazy(() => import('./image/index'))
+}, {
     name: 'toast',
     path: '/toast',
     exact,

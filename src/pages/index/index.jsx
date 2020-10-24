@@ -15,6 +15,10 @@ class Index extends React.Component {
                 <div className="contents">
                     <ul>
                         <li>
+                            <div className="title" onClick={() => history.push('/image')}>Image</div>
+                            <div className="text">图片展示组件</div>
+                        </li>
+                        <li>
                             <div className="title" onClick={() => history.push('/toast')}>Toast</div>
                             <div className="text">信息提示组件</div>
                         </li>
