@@ -7,7 +7,7 @@ import './image.scss'
 import blank from './blank.png'
 
 export const IMG = (props) => {
-    const { className, src = '', alt = '', title = '', style = {}, onClick, onError } = props
+    const { className, src = '', alt = '', title = '', style = {}, onLoad, onError, onClick } = props
     return (
         <img
             className={classNames(className)}
@@ -15,8 +15,9 @@ export const IMG = (props) => {
             alt={alt}
             title={title}
             style={style}
-            onClick={(e) => typeof onClick === 'function' && onClick(e)}
-            onError={(e) => typeof onError === 'function' && onError(e)} />
+            onLoad={(e) => typeof onLoad === 'function' && onLoad(e)}
+            onError={(e) => typeof onError === 'function' && onError(e)}
+            onClick={(e) => typeof onClick === 'function' && onClick(e)} />
     )
 }
 
@@ -25,6 +26,7 @@ class Image extends React.Component {
         super(props)
         let { show = !1, src = blank, alt = '', title = '' } = props
         this.state = {
+            ready: !1,
             show,
             src,
             alt,
@@ -47,7 +49,13 @@ class Image extends React.Component {
         this.setState({
             src,
             alt,
-            title
+            title,
+            ready: this.state.src === src
+        })
+    }
+    onLoad () {
+        this.setState({
+            ready: true
         })
     }
     onShow () {
@@ -65,12 +73,15 @@ class Image extends React.Component {
         })
     }
     render () {
-        const { show, src, alt, title } = this.state
+        const { show, src, alt, title, ready = !1 } = this.state
         const { className, list = [] } = this.props
         return (
             <Popup className={classNames('i-gallery', className)} show={show} onClickBackground={() => this.onHide()}>
                 <div className="display">
-                    <IMG {...{ src, alt, title }} />
+                    <div className={classNames('box', ready || 'loading')}>
+                        <div className="btn" onClick={() => this.onHide()}></div>
+                        <IMG className="img" onLoad={(e) => this.onLoad(e)} {...{ src, alt, title }} />
+                    </div>
                 </div>
                 <div className="gallery">
                     {
